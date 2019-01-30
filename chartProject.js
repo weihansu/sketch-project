@@ -62,5 +62,6 @@ function plotData(data) {
   document.querySelector(".container").appendChild(toAdd);
 }
 
-var data = [1, 20, 13, 5, 6];
+var data = [10, 20, 13, 5, 6, 8, 21];
 plotData(data);
+setHeight('progress-fill', data);
