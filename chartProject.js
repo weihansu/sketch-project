@@ -35,7 +35,21 @@ function calcHeight(data, n) {
   return height;
 }
 
-var data = [1, 20, 13, 5, 6];
+/**
+  * @desc function to manipulate DOM style
+  * @param string - className
+  * @param array of numbers - data
+*/
+function setHeight(className, data) {
+  for (var i = 0; i < data.length; i++) {
+    var barHeight = calcHeight(data, data[i]) * 100;
+    var barTop = 100 - barHeight;
+    var bar = document.querySelector('.' + className + '-' + i);
+    bar.style.height = barHeight + "%";
+    bar.style.top = barTop + "%";
+  }
+}
+
 
 function plotData(data) {
   var toAdd = document.createDocumentFragment();
@@ -48,4 +62,5 @@ function plotData(data) {
   document.querySelector(".container").appendChild(toAdd);
 }
 
+var data = [1, 20, 13, 5, 6];
 plotData(data);
