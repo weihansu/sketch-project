@@ -24,6 +24,17 @@ function createSpan(value, classApend) {
   classApend.appendChild(toSpan);
 }
 
+/**
+  * @desc function to calculate the height of a distinct value of dataset
+  * @param array of numbers - data
+  * @param number - n
+*/
+function calcHeight(data, n) {
+  var max = Math.max(...data);
+  var height = n / max;
+  return height;
+}
+
 var data = [1, 20, 13, 5, 6];
 
 function plotData(data) {
